@@ -1,0 +1,303 @@
+/* .teko-<uniquifier> {
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <150>;
+  font-style: normal;
+} */
+/* NORMALIZACION */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*Esto mantiene el ancho y alto a pesar de padding y border */
+    font-family: 'inc';
+    list-style: none;
+    /*quitar los puntos de decoracion de las listas */
+    text-decoration: none;
+    /*esto quita el subrayado de los enlaces*/
+    color: white;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    /* TO DO: borrar cuando tengamos el fondo final */
+}
+
+header {
+    position: fixed;
+    /*Esto hace el header se quede fijo en la parte superior */
+    right: 0;
+    top: 0;
+    z-index: 100;
+    /*Esyo hace que el headrer se muestre por encima*/
+    width: 100%;
+    display: flex;
+    /*Esto hace que los elementos se pongan en linea*/
+    align-items: center;
+    /* centra verticalmente*/
+    justify-content: space-between;
+    /*Que los elementeos se separen*/
+    padding: 10px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    /*este es el grosor de las letras*/
+
+}
+
+.navlist {
+    display: flex;
+    /*esto sirve para que los elementos en la lista UL se pongan en linea*/
+}
+
+.navlist a {
+    margin-left: 60px;
+    /* es para separar las palabras*/
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    /* este es un subrayado transparente*/
+    transition: all .5 ease;
+    /*esto es para animar toda las caracteristicas del .navlist a*/
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+    /*subrayado blanco cuando estamos encima con el mouse*/
+}
+
+/* #menu-icon {
+    display: none; */
+/* para que solo se vea cuando la pagina esta colapsada de forma horizontal*/
+
+#menu-icon {
+    display: none;
+    color: white;
+    font-size: 35px;
+    z-index: 101;
+    /*para que este sobre el header*/
+    cursor: pointer;
+    /*para que aparezca la manito*/
+}
+
+#menu-toggle {
+    display: none;
+    /* Esto es para que nunca se vea el checkbox*/
+}
+
+.menu-icon-action {
+    display: none;
+    /* para que no se le pueda hacer click*/
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    /*fondo de color gradiante*/
+    position: relative;
+    /*para que sea relativo al contenedor (nos permite usar top bottom left y right*/
+    display: grid;
+    /*oara que el hero se pueda dividir en dos columnas*/
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+
+}
+
+.hero-text h1 {
+    font-family: "Teko", sans-serif;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img {
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 5s linear;
+    /* esto hace que la transicion sea lineal*/
+
+}
+
+.hero-img img:hover {
+    width: 450px;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.videos {
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transform: all .5 ease;
+}
+
+.icons i:hover {
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translate(-5px);
+}
+
+/* aca vamos a hacer mediaqueris para que la web sea responsive */
+@media (max-width:849px) {
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text {
+        padding-top: 0%;
+    }
+
+    .hero-img {
+        text-align: center;
+
+    }
+
+    .hero-img img {
+        width: 80%;
+        margin: 10% 0 10%;
+    }
+
+    .hero-text p {
+        font-size: 70%;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width:700px) {
+    .menu-icon-action {
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #011241;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 1s ease;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked+label.menu-icon-action+ul {
+        right: 0;
+    }
+}
